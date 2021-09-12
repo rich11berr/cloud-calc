@@ -27,4 +27,3 @@ backup_path=/tmp/backup-$USER-$DATE.tgz
 tar -czf $backup_path $dir
 ln -sf $backup_path $link_name
 
-#я без понятия что я написал
