@@ -13,6 +13,18 @@
 # --strip-components - отбросить n вложенных папок
 
 
-$ tar -cvf backup-$USER-$DATA.tar.gz /tmp
+# $ tar -czf backup-$USER-$DATA.tar.gz /tmp
+
+
+# source - include/import
+# ln — команда Unix, создающая жёсткую ссылку или символьную ссылку на файл.
+#     Мягкая ссылка или символическая ссылка: это просто ярлык к исходному файлу.
+#     Жесткая ссылка: указывает на место в памяти исходного файла.
+
+source ~/settings.conf
+DATE=$(date +%Y-%m-%d)
+backup_path=/tmp/backup-$USER-$DATE.tgz
+tar -czf $backup_path $dir
+ln -sf $backup_path $link_name
 
 #я без понятия что я написал
