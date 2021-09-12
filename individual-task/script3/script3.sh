@@ -5,4 +5,4 @@
 
 ps -eo user,cmd,%cpu --sort=-%cpu | head
 
-ps -eo user,command,%cpu --sort=-c | grep -v "0.0"
+ps -eo user,command,%cpu --sort=-c | grep -v " 0.0"
