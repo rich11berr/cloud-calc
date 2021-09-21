@@ -21,9 +21,11 @@
 #     Мягкая ссылка или символическая ссылка: это просто ярлык к исходному файлу.
 #     Жесткая ссылка: указывает на место в памяти исходного файла.
 
+# проверить что существует директория которую надо архивировать
+# проверить существует ли директория в которую надо скидывать архив (если нет то создать)
+
 source ~/settings.conf
 DATE=$(date +%Y-%m-%d)
 backup_path=/tmp/backup-$USER-$DATE.tgz
-tar -czf $backup_path $dir
-ln -sf $backup_path $link_name
+tar -czf $backup_path $dir && ln -sf $backup_path $link_name
 
